@@ -1,7 +1,13 @@
 
-Operating System
+System
 ------------------------
+
 Ubuntu 10.04.3 LTS
+RVM
+Ruby 1.9.2
+Passenger
+Nginx
+MySql
 
 Install dependents package
 ------------------------
@@ -28,7 +34,7 @@ Install Ruby(1.9.2)
 
     rvmsudo rvm install 1.9.2
 
-Install Bundler --pre
+Install Bundler --pre(Not Required)
 ------------------------
 
     rvm use 1.9.2
@@ -36,6 +42,7 @@ Install Bundler --pre
     rvm gemset use global
     gem uninstall bundler
     gem install bundler --pre
+    rvm reset
 
 Install Passenger-Nginx
 ------------------------
