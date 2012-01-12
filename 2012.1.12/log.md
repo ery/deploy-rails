@@ -2,12 +2,12 @@
 System
 ------------------------
 
-Ubuntu 10.04.3 LTS
-RVM
-Ruby 1.9.2
-Passenger
-Nginx
-MySql
+* Ubuntu 10.04.3 LTS
+* RVM
+* Ruby 1.9.2
+* Passenger
+* Nginx
+* MySql
 
 Install dependents package
 ------------------------
