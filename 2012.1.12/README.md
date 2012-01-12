@@ -7,7 +7,7 @@ System
 * Ruby 1.9.2
 * Passenger
 * Nginx
-* MySql
+* MySQL
 
 Install dependents package
 ------------------------
@@ -63,12 +63,57 @@ Install Nginx Startup Script
     sudo chmod +x /etc/init.d/nginx
     sudo update-rc.d nginx defaults
 
-Undone
+Project: Setup SSH Key
 ------------------------
 
-* project: download source code         for project
-* project: install gems                 for project
-* project: setup database               for project
+    mkdir /home/box/.ssh -p
+    cat /home/box/.ssh/config
+
+    Host             boxcode.com
+      HostName       boxcode.com
+      User           box
+      IdentityFile   /home/box/.ssh/boxcode.id_rsa
+
+    sudo chmod 600 /home/box/.ssh/ -R
+    sudo chmod 700 /home/box/.ssh
+
+Project: Download source code
+------------------------
+
+    git clone boxcode.com:boxcode.git /home/box/boxcode
+
+Project: Install gems 
+------------------------
+
+    cd /home/box/boxcode
+    bundle install
+
+Project: Setup database
+------------------------
+
+    cat /home/box/creatdb.sql
+
+    drop schema if exists box;
+    create DATABASE box character set utf8;
+    grant select, insert, delete, update, create, drop, alter, index on box.* to box;
+    set PASSWORD for 'box' = password('box');
+    flush privileges;
+
+    mysql --user=root --password < "/home/box/creatdb.sql"
+
+    cat /home/box/boxcode/config/database.yml
+
+    production:
+      adapter: mysql
+      database: box
+      host: localhost
+      username: box
+      password: box
+      encoding: utf8
+
+
+Undone
+------------------------
 * project: precompile assets(rails 3.1) for project
 * project: setup nginx                  for project
 
