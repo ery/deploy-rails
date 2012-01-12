@@ -1,9 +1,9 @@
 
-系统环境
-========================
+Operating System
+------------------------
 Ubuntu 10.04.3 LTS
 
-安装所需的linux包
+Install dependents package
 ------------------------
 
     sudo apt-get install \
@@ -16,11 +16,11 @@ Ubuntu 10.04.3 LTS
     sqlite3 libsqlite3-ruby libsqlite3-dev \
     mysql-server libmysqlclient-dev
 
-安装RVM 采用Multi-User模式
+Install RVM, with Multi-User mode
 ------------------------
     sudo bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
 
-未完成的事情
+Undone
 ------------------------
 
 
