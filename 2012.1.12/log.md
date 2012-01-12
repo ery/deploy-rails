@@ -16,14 +16,18 @@ Install dependents package
     sqlite3 libsqlite3-ruby libsqlite3-dev \
     mysql-server libmysqlclient-dev
 
-Install RVM, withMulti-User mode
+Install RVM, with Multi-User mode
 ------------------------
+
     sudo bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
 
+    sudo adduser box rvm # box is current user
+    source /etc/profile
 
 Install Ruby(1.9.2)
 ------------------------
-    rvm install 1.9.2
+
+    rvmsudo rvm install 1.9.2
 
 Undone
 ------------------------
