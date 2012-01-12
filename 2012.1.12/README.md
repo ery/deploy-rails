@@ -29,6 +29,10 @@ Install RVM, with Multi-User mode
     sudo adduser box rvm # box is current user
     source /etc/profile
 
+    # ensure file permission is correct
+    sudo chown root:rvm -R /usr/local/rvm/
+    sudo chmod g+w -R      /usr/local/rvm/
+
 Install Ruby(1.9.2)
 ------------------------
 
@@ -54,6 +58,7 @@ Install Nginx
 ------------------------
 
     rvmsudo passenger-install-nginx-module
+    sudo ln -s /etc/init.d/nginx /usr/bin
 
 Install Nginx Startup Script
 ------------------------
@@ -111,20 +116,31 @@ Project: Setup database
       password: box
       encoding: utf8
 
+    rake db:migrate RAILS_ENV="production"
+    rake db:seed    RAILS_ENV="production"
 
-Undone
-------------------------
-* project: precompile assets(rails 3.1) for project
-* project: setup nginx                  for project
-
-Fix some issue
+Project: Precompile assets(rails 3.1)
 ------------------------
 
-    sudo chown root:rvm -R /usr/local/rvm/
-    sudo chmod g+w -R      /usr/local/rvm/
+    cd /home/box/boxcode
+    rake assets:precompile
 
+Project: Setup nginx
+------------------------
 
+    sudo vim /opt/nginx/conf/nginx.conf
+    server {
+      listen 80;
+      server_name box.com;
+      root /home/box/boxcode/public;
+      passenger_enabled on;
+    }
 
+Retart Nginx
+------------------------
+
+    sudo nginx destroy
+    sudo nginx start
 
 
 
