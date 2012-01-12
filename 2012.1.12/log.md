@@ -20,7 +20,6 @@ Install RVM, with Multi-User mode
 ------------------------
 
     sudo bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
-
     sudo adduser box rvm # box is current user
     source /etc/profile
 
@@ -29,10 +28,29 @@ Install Ruby(1.9.2)
 
     rvmsudo rvm install 1.9.2
 
+Install Bundler --pre
+------------------------
+
+    rvm use 1.9.2
+    gem uninstall bundler
+    rvm gemset use global
+    gem uninstall bundler
+    gem install bundler --pre
+
+Install Passenger-Nginx
+------------------------
+
+    rvm use 1.9.2
+    gem install passenger
+
 Undone
 ------------------------
 
+Fix some issue
+------------------------
 
+    sudo chown root:rvm -R /usr/local/rvm/
+    sudo chmod g+w -R      /usr/local/rvm/
 
 
 
