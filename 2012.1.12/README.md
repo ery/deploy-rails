@@ -55,6 +55,14 @@ Install Nginx
 
     rvmsudo passenger-install-nginx-module
 
+Install Nginx startup script
+------------------------
+
+    wget https://raw.github.com/gist/1548664/53f6d7ccb9dfc82a50c95e9f6e2e60dc59e4c2fb/nginx
+    sudo mv nginx /etc/init.d/
+    sudo chmod +x /etc/init.d/nginx
+    sudo update-rc.d nginx defaults
+
 Undone
 ------------------------
 
@@ -70,12 +78,6 @@ Fix some issue
 
     sudo chown root:rvm -R /usr/local/rvm/
     sudo chmod g+w -R      /usr/local/rvm/
-
-
-
-
-
-
 
 Nginx Installer Log
 ------------------------
