@@ -50,8 +50,20 @@ Install Passenger-Nginx
     rvm use 1.9.2
     gem install passenger
 
+Install Nginx
+------------------------
+
+    rvmsudo passenger-install-nginx-module
+
 Undone
 ------------------------
+
+* install nginx startup script
+* download project source code
+* install project gems
+* setup database
+* setup nginx for project
+* precompile project assets(rails 3.1)
 
 Fix some issue
 ------------------------
