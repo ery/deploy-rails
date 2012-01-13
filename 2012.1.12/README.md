@@ -109,7 +109,7 @@ Project: Setup database
     cat /home/box/boxcode/config/database.yml
 
     production:
-      adapter: mysql
+      adapter: mysql2
       database: box
       host: localhost
       username: box
