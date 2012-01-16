@@ -4,6 +4,7 @@ System
 * Ubuntu 10.04.3 LTS
 * RVM
 * Ruby 1.9.2
+* Rails 3.1.3
 * Passenger
 * Nginx
 * MySQL
