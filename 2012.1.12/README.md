@@ -28,10 +28,6 @@ Install RVM, with Multi-User mode
     sudo adduser box rvm # box is current user
     source /etc/profile
 
-    # ensure file permission is correct
-    sudo chown root:rvm -R /usr/local/rvm/
-    sudo chmod g+w -R      /usr/local/rvm/
-
 Install Ruby(1.9.2)
 ------------------------
 
