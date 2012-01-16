@@ -1,4 +1,3 @@
-
 System
 ------------------------
 
@@ -36,7 +35,7 @@ Install RVM, with Multi-User mode
 Install Ruby(1.9.2)
 ------------------------
 
-    rvmsudo rvm install 1.9.2
+    rvm install 1.9.2
 
 Install Bundler --pre(Not Required)
 ------------------------
